@@ -9,28 +9,95 @@ PORT
 MONGO_URL
 JWT_SECRET
 
-register 
-url :- http:localhost:3000/api/users/register
+1. Register User
 
-login 
-url :- http:localhost:3000/api/users/login
+URL
 
+POST  http:localhost:3000/api/users/register
 
-create blog
-url :- http:localhost:3000/api/blogs/addBlogs
+Request Body
 
-get all blog
-url :- http:localhost:3000/api/blogs/getallBlogs
+{
+"name":"Vihang",
+"email":"vihang@gmail.com",
+"password":"123456"
+}
 
-get  blog by id
-url :- http:localhost:3000/api/blogs/:id/getBlogById
+2. Login User
 
-delete blog
-url :- http:localhost:3000/api/blogs/:id/deleteBlogById
+URL
 
-upadte blog
-url :- http:localhost:3000/api/blogs/:id/updateBlogById
+POST http:localhost:3000/api/users/login
 
+Request Body
 
+{
+"email":"vihang@gmail.com",
+"password":"123456"
+}
 
+3. Create Blog
 
+URL
+
+POST http:localhost:3000/api/blogs/addBlogs
+
+Headers
+
+Authorization:TOKEN
+
+Request Body
+
+{
+"title":"My First Blog",
+"content":"This is blog content",
+"tags":["node","javascript"]
+}
+
+4. Get All Blogs
+
+URL
+
+GET http:localhost:3000/api/blogs/getallBlogs
+
+Query Example
+
+?page=1&limit=10
+
+5. Get Blog By ID
+
+URL
+
+GET http:localhost:3000/api/blogs/:id/getBlogById
+
+Example
+
+GET http:localhost:3000/api/blogs/69b165c5f5849ce143374043/getBlogById
+
+6. Update Blog
+
+URL
+
+PUT http:localhost:3000/api/blogs/:id/updateBlogById
+
+Headers
+
+Authorization:TOKEN
+
+Request Body
+
+{
+"title":"Updated Blog Title",
+"content":"Updated content",
+"tags":["node","api"]
+}
+
+7. Delete Blog
+
+URL
+
+DELETE http:localhost:3000/api/blogs/:id/deleteBlogById
+
+Headers
+
+Authorization:TOKEN
