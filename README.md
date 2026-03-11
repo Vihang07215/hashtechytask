@@ -4,10 +4,10 @@ git clone repo
 npm install
 npm run dev
 
-enviornment varibles 
-PORT
-MONGO_URL
-JWT_SECRET
+enviornment varibles :-
+PORT,
+MONGO_URL,
+JWT_SECRET,
 
 1. Register User
 
